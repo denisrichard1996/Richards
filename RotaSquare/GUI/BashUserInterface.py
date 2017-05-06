@@ -1,12 +1,7 @@
 #!/usr/bin/python3
 #-*- coding: utf-8 -*-
 
-# import sys
-# sys.path[:0] = ['../Domain']
-# import Domain.Plateau
-from Board import *
-from UserInterface import *
-
+from GUI import *
 
 class BashUserInterface(UserInterface):
 
@@ -58,4 +53,4 @@ class BashUserInterface(UserInterface):
         elif (self.game.win == 2):
             print("PLAYER 2 WINS!")
         elif (self.game.win == 3):
-            print("DRAW!")    
+            print("DRAW!")

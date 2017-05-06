@@ -1,9 +1,8 @@
 #!/usr/bin/python3
 #-*- coding: utf-8 -*-
 
-from Board import *
-from BashUserInterface import *
-from Referee import *
+from Domain import *
+from GUI import *
 
 class Game(object):
 

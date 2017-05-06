@@ -1,4 +1,8 @@
-from Game import Game
+#!/usr/bin/python3
+#-*- coding: utf-8 -*-
 
-g = Game()
+import Domain
+import GUI
+
+g = Domain.Game()
 g.main()
