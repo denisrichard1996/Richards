@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 # -*- coding: utf-8 -*-
 
-from RotaSquare.GUI import UserInterface
+from GUI import UserInterface
 
 
 class BashUserInterface(UserInterface):
@@ -40,12 +40,12 @@ class BashUserInterface(UserInterface):
         x = input("Rotation ahead!")
         self.display()
 
-    def input_turn(self):
+    def wait_input(self):
         print("Au tour du joueur " + str(self.game.player))
         c = input("Colonne : ")
         while not (self.valid_input(c) and self.game.board.can_add(int(c))):
             c = input("Colonne : ")
-        return int(c)
+        self.game.resume_main(int(c))
 
     def display_win(self):
         if (self.game.win == 1):

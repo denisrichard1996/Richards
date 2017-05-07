@@ -1,9 +1,8 @@
 #!/usr/bin/python3
 #-*- coding: utf-8 -*-
 
-from RotaSquare.Domain import *
-from RotaSquare.GUI import *
-from RotaSquare.GUI.TkinterUserInterface import TkinterUserInterface
+from Domain import *
+from GUI import *
 
 
 class Game(object):
@@ -21,8 +20,9 @@ class Game(object):
 
     def main(self):
         self.interface.display_init()
-        while (self.win == 0):
-            c = self.interface.input_turn
+        self.interface.wait_input()
+
+    def resume_main(self, c):
             self.board.add(c, self.player)
             self.interface.display()
             self.win = self.ref.check_win(self.board.tab)
@@ -32,4 +32,7 @@ class Game(object):
                 self.board.rota()
                 self.interface.display_rota()
                 self.win = self.ref.check_win(self.board.tab)
-        self.interface.display_win()
+            if (self.win != 0):
+                self.interface.display_win()
+            else:
+                self.interface.wait_input()

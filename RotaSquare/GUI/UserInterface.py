@@ -18,5 +18,5 @@ class UserInterface(object):
     def display_win(self):
         pass
 
-    def input_turn(self):
+    def wait_input(self):
         pass

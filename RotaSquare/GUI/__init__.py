@@ -3,3 +3,4 @@
 
 from .UserInterface import *
 from .BashUserInterface import *
+from .TkinterUserInterface import *
