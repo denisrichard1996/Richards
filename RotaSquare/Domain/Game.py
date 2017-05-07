@@ -3,6 +3,8 @@
 
 from RotaSquare.Domain import *
 from RotaSquare.GUI import *
+from RotaSquare.GUI.TkinterUserInterface import TkinterUserInterface
+
 
 class Game(object):
 
@@ -11,7 +13,7 @@ class Game(object):
         self.player = 1
         self.round = 0
         self.win = 0
-        self.interface = BashUserInterface(self)
+        self.interface = TkinterUserInterface(self)
         self.ref = Referee(self.board.tab)
 
     def change_player(self):
@@ -20,7 +22,7 @@ class Game(object):
     def main(self):
         self.interface.display_init()
         while (self.win == 0):
-            c = self.interface.input_turn()
+            c = self.interface.input_turn
             self.board.add(c, self.player)
             self.interface.display()
             self.win = self.ref.check_win(self.board.tab)
