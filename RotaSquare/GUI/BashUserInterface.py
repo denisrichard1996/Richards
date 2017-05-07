@@ -1,10 +1,10 @@
 #!/usr/bin/python3
-#-*- coding: utf-8 -*-
+# -*- coding: utf-8 -*-
 
-from GUI import *
+from RotaSquare.GUI import UserInterface
+
 
 class BashUserInterface(UserInterface):
-
     def __init__(self, g):
         UserInterface.__init__(self, g)
 
@@ -33,7 +33,7 @@ class BashUserInterface(UserInterface):
             for x in t:
                 s = s + self.valueToChar(x)
             s = s + "|\n"
-        s = s +  "#========#\n"
+        s = s + "#========#\n"
         print(s)
 
     def display_rota(self):

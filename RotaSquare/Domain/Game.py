@@ -1,8 +1,8 @@
 #!/usr/bin/python3
 #-*- coding: utf-8 -*-
 
-from Domain import *
-from GUI import *
+from RotaSquare.Domain import *
+from RotaSquare.GUI import *
 
 class Game(object):
 

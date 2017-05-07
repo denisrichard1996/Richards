@@ -1,8 +1,7 @@
 #!/usr/bin/python3
 #-*- coding: utf-8 -*-
 
-import Domain
-import GUI
+from RotaSquare.Domain import *
 
-g = Domain.Game()
+g = Game()
 g.main()
