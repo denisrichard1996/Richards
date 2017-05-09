@@ -24,10 +24,10 @@ class Game(object):
 
     def resume_main(self, c):
             self.board.add(c, self.player)
-            self.interface.display()
             self.win = self.ref.check_win(self.board.tab)
             self.change_player()
             self.round = (self.round + 1) % 3
+            self.interface.display()
             if (self.win == 0 and self.round == 0):
                 self.board.rota()
                 self.interface.display_rota()
@@ -36,3 +36,9 @@ class Game(object):
                 self.interface.display_win()
             else:
                 self.interface.wait_input()
+
+    def reset(self):
+        self.board = Board()
+        self.player = 1
+        self.round = 0
+        self.win = 0  
