@@ -8,11 +8,13 @@ struct Morpion
 public:
   Morpion();
   void reset();
+  bool addElement(int index, Cell player);
   Cell* getCells();
   Result getResult();
-  void computeResult();
   void printCells();
+
 private:
+  void computeResult();
   Cell cells[9];
   Result result;
 };

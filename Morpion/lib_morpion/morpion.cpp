@@ -1,10 +1,12 @@
 #include "morpion.h"
 
+/******************************************************************************/
 Morpion::Morpion()
 {
   reset();
 }
 
+/******************************************************************************/
 void Morpion::reset()
 {
   for (int i = 0; i < 9; i++)
@@ -13,16 +15,20 @@ void Morpion::reset()
   result = ONGOING;
 }
 
+/******************************************************************************/
 Cell* Morpion::getCells()
 {
   return cells;
 }
 
+/******************************************************************************/
 Result Morpion::getResult()
 {
+  computeResult();
   return result;
 }
 
+/******************************************************************************/
 static void getLineResult(Cell cells[9], int i, bool& win1, bool& win2)
 {
   int value = cells[3*i]*cells[3*i+1]*cells[3*i+2];
@@ -33,6 +39,7 @@ static void getLineResult(Cell cells[9], int i, bool& win1, bool& win2)
   return;
 }
 
+/******************************************************************************/
 static void getColumnResult(Cell cells[9], int i, bool& win1, bool& win2)
 {
   if (i>2)
@@ -45,6 +52,7 @@ static void getColumnResult(Cell cells[9], int i, bool& win1, bool& win2)
   return;
 }
 
+/******************************************************************************/
 static void getDiagResult(Cell cells[9], int i, bool& win1, bool& win2)
 {
   if (i > 1)
@@ -57,6 +65,7 @@ static void getDiagResult(Cell cells[9], int i, bool& win1, bool& win2)
   return;
 }
 
+/******************************************************************************/
 static Result getDrawResult(Cell cells[9])
 {
   int value = 1;
@@ -68,6 +77,7 @@ static Result getDrawResult(Cell cells[9])
   return ONGOING;
 }
 
+/******************************************************************************/
 void Morpion::computeResult()
 {
   if(getDrawResult(cells) == DRAW)
@@ -94,6 +104,16 @@ void Morpion::computeResult()
   return;
 }
 
+/******************************************************************************/
+bool Morpion::addElement(int index, Cell player)
+{
+  if (cells[index] != EMPTY || (player != PLAYER1 && player != PLAYER2))
+    return false;
+  cells[index] = player;
+  return true;
+}
+
+/******************************************************************************/
 void Morpion::printCells()
 {
   printf("%d %d %d\n%d %d %d\n%d %d %d\n", cells[6],cells[7],cells[8],cells[3],cells[4],cells[5],cells[0],cells[1],cells[2]);
