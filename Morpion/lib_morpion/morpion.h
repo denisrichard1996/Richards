@@ -1,7 +1,13 @@
 #include <iostream>
 
-enum Cell {EMPTY=0, PLAYER1=1, PLAYER2=2};
-enum Result {ONGOING, WINNER1, WINNER2, DRAW};
+enum Cell
+{
+  EMPTY = 0, PLAYER1 = 1, PLAYER2 = 2
+};
+enum Result
+{
+  ONGOING, WINNER1, WINNER2, DRAW
+};
 
 struct Morpion
 {
@@ -18,3 +24,4 @@ private:
   Cell cells[9];
   Result result;
 };
+
