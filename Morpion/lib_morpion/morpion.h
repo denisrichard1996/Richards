@@ -1,3 +1,6 @@
+#ifndef GUI_MORPION_H
+#define GUI_MORPION_H
+
 #include <iostream>
 
 enum Cell
@@ -25,3 +28,4 @@ private:
   Result result;
 };
 
+#endif

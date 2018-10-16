@@ -1,11 +1,13 @@
 #include <iostream>
 #include "lib_morpion/morpion.h"
+#include "lib_gui/gui_bash.h"
 using namespace std;
 
 void classicMorpion()
 {
-  Morpion morpion;
-  morpion.reset();
+  Morpion* morpion = new Morpion();
+  GUIInterface* gui = new GUIBash(morpion);
+  morpion->reset();
 }
 
 int main(int argc, char** argv)
@@ -27,4 +29,3 @@ int main(int argc, char** argv)
 
   return 0;
 }
-
