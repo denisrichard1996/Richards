@@ -1,20 +1,22 @@
 #include "gui_bash.h"
 
-void GUIBash(std::shared_ptr<Morpion> p_morpion){
+GUIBash::GUIBash(std::shared_ptr<Morpion> p_morpion)
+{
   morpion = p_morpion;
 }
 
 void GUIBash::init()
 {
-  printf("init\n" );
+  printf("init\n");
 }
 
 void GUIBash::refreshOutput()
 {
-  printf("refreshoutput\n" );
+  printf("refreshoutput\n");
 }
 
 int GUIBash::getInput()
 {
   return 0;
 }
+

@@ -5,8 +5,8 @@ using namespace std;
 
 void classicMorpion()
 {
-  Morpion* morpion = new Morpion();
-  GUIInterface* gui = new GUIBash(morpion);
+  auto morpion = make_shared<Morpion>();
+  auto gui = make_shared<GUIBash>(morpion);
   morpion->reset();
 }
 
@@ -29,3 +29,4 @@ int main(int argc, char** argv)
 
   return 0;
 }
+
