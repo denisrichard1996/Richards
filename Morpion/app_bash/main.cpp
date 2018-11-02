@@ -1,5 +1,5 @@
 #include <iostream>
-#include "lib_morpion/morpion.h"
+#include "lib_morpion/morpion_rond.h"
 #include "lib_gui/gui_bash.h"
 #include <assert.h>
 using namespace std;
@@ -36,7 +36,12 @@ void classicMorpion()
 
 int main(int argc, char** argv)
 {
-  classicMorpion();
+  // classicMorpion();
+  auto morpion = make_shared<MorpionRond>();
+  morpion->reset();
+  auto cells = morpion->morpions[4].getCells();
+  cells[0] = Cell::PLAYER2;
+  morpion->printMorpionRond();
 
   return 0;
 }

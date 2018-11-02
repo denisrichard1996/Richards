@@ -7,14 +7,15 @@
 
 enum Cell
 {
-  EMPTY = 0, PLAYER1 = 1, PLAYER2 = 2
+  EMPTY = 0, PLAYER1 = 1, PLAYER2 = 2, FULL = 3
 };
 
 static std::map<Cell, std::string> MapToStringCell =
 {
   { EMPTY, "No Player" },
   { PLAYER1, "Player 1" },
-  { PLAYER2, "Player 2" }
+  { PLAYER2, "Player 2" },
+  { FULL, "No one" }
 };
 
 enum Result
@@ -28,6 +29,14 @@ static std::map<Result, std::string> MapToStringResult =
   { WINNER1, "Player 1" },
   { WINNER2, "Player 2" },
   { DRAW, "Draw" }
+};
+
+static std::map<Result, Cell> MapToCellResult =
+{
+  { ONGOING, EMPTY },
+  { WINNER1, PLAYER1 },
+  { WINNER2, PLAYER2 },
+  { DRAW, FULL }
 };
 
 struct Morpion
