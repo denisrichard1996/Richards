@@ -3,6 +3,8 @@
 
 #include "gui_interface.h"
 #include <memory>
+#include <iostream>
+#include <string>
 
 struct GUIBash : public GUIInterface
 {

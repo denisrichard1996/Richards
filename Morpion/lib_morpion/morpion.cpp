@@ -115,9 +115,15 @@ void Morpion::computeResult()
 }
 
 /******************************************************************************/
+bool Morpion::isEmpty(int index)
+{
+  return cells[index] == EMPTY;
+}
+
+/******************************************************************************/
 bool Morpion::addElement(int index, Cell player)
 {
-  if(cells[index] != EMPTY || (player != PLAYER1 && player != PLAYER2))
+  if(!isEmpty(index) || (player != PLAYER1 && player != PLAYER2))
     return false;
   cells[index] = player;
   return true;
