@@ -1,15 +1,16 @@
-#ifndef GUI_BASH_H
-#define GUI_BASH_H
+#ifndef GUI_MORPION_H
+#define GUI_MORPION_H
 
 #include "gui_interface.h"
+#include "lib_morpion/morpion.h"
 #include <memory>
 #include <iostream>
 #include <string>
 
-struct GUIBash : public GUIInterface
+struct GUIMorpion : public GUIInterface
 {
 public:
-  GUIBash(std::shared_ptr<Morpion> p_morpion);
+  GUIMorpion(std::shared_ptr<Morpion> p_morpion);
 
   virtual void init();
   virtual void refreshOutput();

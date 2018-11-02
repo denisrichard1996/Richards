@@ -1,8 +1,6 @@
 #ifndef GUI_INTERFACE_H
 #define GUI_INTERFACE_H
 
-#include "lib_morpion/morpion.h"
-
 struct GUIInterface
 {
   virtual ~GUIInterface() {};

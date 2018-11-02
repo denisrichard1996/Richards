@@ -6,14 +6,16 @@ BIN = bin
 EXEC_NAME = $(BIN)/morpion_bash
 
 SRC = app_bash/main.cpp\
-			lib_gui/gui_bash.cpp\
+			lib_gui/gui_morpion.cpp\
+			lib_gui/gui_rond.cpp\
 			lib_morpion/morpion.cpp\
 			lib_morpion/morpion_rond.cpp
 
 DEPS = lib_morpion/morpion.h\
 			 lib_morpion/morpion_rond.h\
 			 lib_gui/gui_interface.h\
-			 lib_gui/gui_bash.h
+			 lib_gui/gui_morpion.h\
+			 lib_gui/gui_rond.h
 
 OBJ = $(patsubst %.cpp,$(BIN)/%.o,$(SRC))
 

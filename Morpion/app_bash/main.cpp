@@ -1,7 +1,10 @@
 #include <iostream>
+#include "lib_morpion/morpion.h"
 #include "lib_morpion/morpion_rond.h"
-#include "lib_gui/gui_bash.h"
+#include "lib_gui/gui_morpion.h"
+#include "lib_gui/gui_rond.h"
 #include <assert.h>
+#include <memory>
 using namespace std;
 
 static Cell changePlayer(Cell player)
@@ -14,7 +17,7 @@ static Cell changePlayer(Cell player)
 void classicMorpion()
 {
   auto morpion = make_shared<Morpion>();
-  auto gui = make_shared<GUIBash>(morpion);
+  auto gui = make_shared<GUIMorpion>(morpion);
   morpion->reset();
 
   Cell player = Cell::PLAYER1;
@@ -34,14 +37,32 @@ void classicMorpion()
   printf("Winner : %s!\n", MapToStringResult.at(result).c_str());
 }
 
+void rondMorpion()
+{
+  auto morpionRond = make_shared<MorpionRond>();
+  auto gui = make_shared<GUIMorpionRond>(morpionRond);
+  morpionRond->reset();
+
+  gui->refreshOutput();
+  // Cell player = Cell::PLAYER1;
+  // Result result = morpion->getResult();
+  //
+  // while(result == Result::ONGOING)
+  // {
+  //   printf("%s, your turn:\n", MapToStringCell.at(player).c_str());
+  //   auto index = gui->getInput();
+  //   assert(morpion->addElement(index, player));
+  //   result = morpion->getResult();
+  //   player = changePlayer(player);
+  // }
+  //
+  // gui->refreshOutput();
+  // printf("Winner : %s!\n", MapToStringResult.at(result).c_str());
+}
+
 int main(int argc, char** argv)
 {
-  // classicMorpion();
-  auto morpion = make_shared<MorpionRond>();
-  morpion->reset();
-  auto cells = morpion->morpions[4].getCells();
-  cells[0] = Cell::PLAYER2;
-  morpion->printMorpionRond();
+  rondMorpion();
 
   return 0;
 }

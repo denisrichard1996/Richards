@@ -1,26 +1,26 @@
-#include "gui_bash.h"
+#include "gui_morpion.h"
 
 using namespace std;
 
-GUIBash::GUIBash(std::shared_ptr<Morpion> p_morpion)
+GUIMorpion::GUIMorpion(std::shared_ptr<Morpion> p_morpion)
 {
   morpion = p_morpion;
   init();
 }
 
-void GUIBash::init()
+void GUIMorpion::init()
 {
   printf("Richards - Morpion v0.1\n");
 }
 
-void GUIBash::refreshOutput()
+void GUIMorpion::refreshOutput()
 {
   printf("\n\n\n");
   morpion->printCells();
   printf("\n");
 }
 
-int GUIBash::getInput()
+int GUIMorpion::getInput()
 {
   string str;
   int value;
