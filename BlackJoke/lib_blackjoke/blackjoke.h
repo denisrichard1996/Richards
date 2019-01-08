@@ -39,6 +39,7 @@ public:
   Cards();
   bool addCard(Card card);
   bool removeCard(Card card);
+  void copy(Cards* c);
   int size();
   void print();
 
@@ -49,6 +50,7 @@ struct Deck : public Cards
 {
 public:
   Deck(int iPack);
+  Deck(Deck* d);
   void reset(int iPack);
 };
 
@@ -56,7 +58,9 @@ struct Hand : public Cards
 {
 public:
   Hand();
+  Hand(Hand* h);
   void reset();
+  int getResult();
 };
 
 #endif
