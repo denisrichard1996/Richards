@@ -6,9 +6,7 @@ using namespace std;
 
 int main(int argc, char** argv)
 {
-  Deck d = Deck();
-  d.resetDeck(2);
-  d.printDeck();
+  Deck d = Deck(1);
+  d.print();
   return 0;
 }
-

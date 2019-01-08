@@ -2,14 +2,21 @@
 #include <assert.h>
 
 /******************************************************************************/
-Deck::Deck()
+Cards::Cards()
 {
   for(int8_t i = 0; i < 10; i++)
     tab[i] = 0;
 }
 
 /******************************************************************************/
-void Deck::resetDeck(int iPack)
+Deck::Deck(int iPack)
+{
+  Cards();
+  this->reset(iPack);
+}
+
+/******************************************************************************/
+void Deck::reset(int iPack)
 {
   for(int8_t i = 1; i < 10; i++)
     tab[i] = 4 * iPack;
@@ -18,14 +25,28 @@ void Deck::resetDeck(int iPack)
 }
 
 /******************************************************************************/
-bool Deck::addCard(Card card)
+Hand::Hand()
+{
+  Cards();
+  this->reset();
+}
+
+/******************************************************************************/
+void Hand::reset()
+{
+  for(int8_t i = 0; i < 10; i++)
+    tab[i] = 0;
+}
+
+/******************************************************************************/
+bool Cards::addCard(Card card)
 {
   tab[card]++;
   return true;
 }
 
 /******************************************************************************/
-bool Deck::removeCard(Card card)
+bool Cards::removeCard(Card card)
 {
   if(tab[card] == 0)
     return false;
@@ -35,7 +56,7 @@ bool Deck::removeCard(Card card)
 }
 
 /******************************************************************************/
-void Deck::printDeck()
+void Cards::print()
 {
   printf("Deck :\n");
 
@@ -43,4 +64,3 @@ void Deck::printDeck()
     if(tab[i])
       printf("%s : %d\n", MapToStringCard.at((Card)i).c_str(), tab[i]);
 }
-
