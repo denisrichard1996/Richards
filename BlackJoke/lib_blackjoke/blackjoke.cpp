@@ -38,9 +38,9 @@ bool Deck::removeCard(Card card)
 void Deck::printDeck()
 {
   printf("Deck :\n");
-  printf("Faces : %d\n", tab[0]);
 
-  for(int8_t i = 1; i < 10; i++)
-    printf("Card %d : %d\n", i, tab[i]);
+  for(int8_t i = 0; i < 10; i++)
+    if(tab[i])
+      printf("%s : %d\n", MapToStringCard.at((Card)i).c_str(), tab[i]);
 }
 

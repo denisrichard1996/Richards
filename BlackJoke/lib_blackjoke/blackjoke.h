@@ -19,6 +19,20 @@ enum Card
   CARD_VAL9 = 9
 };
 
+static std::map<Card, std::string> MapToStringCard =
+{
+  { CARD_FACE, "Face" },
+  { CARD_ACE, "Ace" },
+  { CARD_VAL2, "Card2" },
+  { CARD_VAL3, "Card3" },
+  { CARD_VAL4, "Card4" },
+  { CARD_VAL5, "Card5" },
+  { CARD_VAL6, "Card6" },
+  { CARD_VAL7, "Card7" },
+  { CARD_VAL8, "Card8" },
+  { CARD_VAL9, "Card9" },
+};
+
 struct Deck
 {
 public:
