@@ -39,6 +39,17 @@ void Hand::reset()
 }
 
 /******************************************************************************/
+int Cards::size()
+{
+  int s = 0;
+
+  for(int8_t i = 0; i < 10; i++)
+    s += tab[i];
+
+  return s;
+}
+
+/******************************************************************************/
 bool Cards::addCard(Card card)
 {
   tab[card]++;
@@ -64,3 +75,4 @@ void Cards::print()
     if(tab[i])
       printf("%s : %d\n", MapToStringCard.at((Card)i).c_str(), tab[i]);
 }
+

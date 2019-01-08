@@ -1,5 +1,5 @@
-#ifndef GUI_BLACKJOKE_H
-#define GUI_BLACKJOKE_H
+#ifndef BLACKJOKE_H
+#define BLACKJOKE_H
 
 #include <iostream>
 #include <string>
@@ -39,6 +39,7 @@ public:
   Cards();
   bool addCard(Card card);
   bool removeCard(Card card);
+  int size();
   void print();
 
   int tab[10];
@@ -59,3 +60,4 @@ public:
 };
 
 #endif
+
