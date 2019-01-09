@@ -64,6 +64,18 @@ void Deck::print()
 }
 
 /******************************************************************************/
+void Hand::print()
+{
+  printf("Hand : ");
+
+  for(int8_t i = 1; i < 11; i++)
+    if(tab[i%10])
+      printf("%s %d  ", MapToStringCard.at((Card)(i%10)).c_str(), tab[i%10]);
+
+  printf("\n");
+}
+
+/******************************************************************************/
 int Hand::getResult()
 {
   int s = 0, s_ace = 0;

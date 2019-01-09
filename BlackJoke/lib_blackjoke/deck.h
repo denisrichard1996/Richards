@@ -42,7 +42,7 @@ public:
   int size();
   bool addCard(Card card);
   bool removeCard(Card card);
-  void print();
+  virtual void print();
 
   int tab[10];
 };
@@ -53,6 +53,7 @@ public:
   Hand() : Deck(0) {};
   Hand(Hand* h) : Deck(static_cast<Deck*>(h)) {};
   int getResult();
+  void print() override;
 };
 
 #endif

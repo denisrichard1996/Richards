@@ -1,5 +1,21 @@
-#include "stats.h"
+#include "board.h"
 #include <assert.h>
+
+/******************************************************************************/
+void Board::reset(int iPack)
+{
+  deck.reset(iPack);
+  hand.reset(0);
+}
+
+/******************************************************************************/
+void Board::print()
+{
+  deck.print();
+  hand.print();
+  printf("Score : %d   Hit? : %f\n", hand.getResult(), getStatHit(&deck, &hand));
+}
+
 
 /******************************************************************************/
 float getStatHit(Deck* deck, Hand* hand)

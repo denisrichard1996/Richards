@@ -7,10 +7,10 @@ EXEC_NAME = $(BIN)/blackJoke
 
 SRC = app_bash/main.cpp\
 			lib_blackjoke/deck.cpp\
-			lib_blackjoke/stats.cpp
+			lib_blackjoke/board.cpp
 
 DEPS = lib_blackjoke/deck.h\
-			lib_blackjoke/stats.h
+			lib_blackjoke/board.h
 
 OBJ = $(patsubst %.cpp,$(BIN)/%.o,$(SRC))
 

@@ -1,25 +1,23 @@
 #include <iostream>
 #include "lib_blackjoke/deck.h"
-#include "lib_blackjoke/stats.h"
+#include "lib_blackjoke/board.h"
 #include <assert.h>
 #include <memory>
 using namespace std;
 
 int main(int argc, char** argv)
 {
-  Deck d = Deck(1);
-  // d.removeCard(CARD_FACE);
-  // d.removeCard(CARD_FACE);
-  // d.removeCard(CARD_FACE);
-  // d.removeCard(CARD_FACE);
-  d.print();
+  Board b = Board();
+  b.reset(1);
 
-  Hand h = Hand();
-  h.addCard(CARD_VAL6);
-  h.addCard(CARD_VAL6);
-  printf("%d\n", h.getResult());
+  // b.deck.removeCard(CARD_FACE);
+  // b.deck.removeCard(CARD_FACE);
+  // b.deck.removeCard(CARD_FACE);
+  // b.deck.removeCard(CARD_FACE);
 
-  printf("hit %f\n", getStatHit(&d, &h));
-  h.print();
+  b.hand.addCard(CARD_VAL6);
+  b.hand.addCard(CARD_VAL6);
+
+  b.print();
   return 0;
 }
