@@ -33,35 +33,26 @@ static std::map<Card, std::string> MapToStringCard =
   { CARD_VAL9, "Card9" },
 };
 
-struct Cards
+struct Deck
 {
 public:
-  Cards();
+  Deck(int iPack);
+  Deck(Deck* c);
+  void reset(int iPack);
+  int size();
   bool addCard(Card card);
   bool removeCard(Card card);
-  void copy(Cards* c);
-  int size();
   void print();
 
   int tab[10];
 };
 
-struct Deck : public Cards
+struct Hand : public Deck
 {
 public:
-  Deck(int iPack);
-  Deck(Deck* d);
-  void reset(int iPack);
-};
-
-struct Hand : public Cards
-{
-public:
-  Hand();
-  Hand(Hand* h);
-  void reset();
+  Hand() : Deck(0) {};
+  Hand(Hand* h) : Deck(static_cast<Deck*>(h)) {};
   int getResult();
 };
 
 #endif
-

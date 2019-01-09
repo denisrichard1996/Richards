@@ -4,9 +4,6 @@
 /******************************************************************************/
 float getStatHit(Deck* deck, Hand* hand)
 {
-  (void)deck;
-  (void)hand;
-
   if(hand->getResult() >= 21 && deck->size() == 0)
     return 0.0;
 
@@ -26,4 +23,3 @@ float getStatHit(Deck* deck, Hand* hand)
 
   return ((float)s_hit) / (s_hit + s_miss);
 }
-

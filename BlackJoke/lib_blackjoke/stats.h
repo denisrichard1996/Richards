@@ -6,4 +6,3 @@
 float getStatHit(Deck* deck, Hand* hand);
 
 #endif
-
