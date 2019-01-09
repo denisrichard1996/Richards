@@ -1,7 +1,7 @@
 #ifndef STATS_H
 #define STATS_H
 
-#include "blackjoke.h"
+#include "deck.h"
 
 float getStatHit(Deck* deck, Hand* hand);
 

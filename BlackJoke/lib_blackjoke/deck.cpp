@@ -1,4 +1,4 @@
-#include "blackjoke.h"
+#include "deck.h"
 #include <assert.h>
 
 /******************************************************************************/
@@ -54,11 +54,13 @@ bool Deck::removeCard(Card card)
 /******************************************************************************/
 void Deck::print()
 {
-  printf("Deck :\n");
+  printf("Deck : ");
 
-  for(int8_t i = 0; i < 10; i++)
-    if(tab[i])
-      printf("%s : %d\n", MapToStringCard.at((Card)i).c_str(), tab[i]);
+  for(int8_t i = 1; i < 11; i++)
+    if(tab[i%10])
+      printf("%s %d  ", MapToStringCard.at((Card)(i%10)).c_str(), tab[i%10]);
+
+  printf("\n");
 }
 
 /******************************************************************************/
@@ -68,12 +70,12 @@ int Hand::getResult()
 
   for(int8_t i = 0; i < 10; i++)
   {
-    if(i == 0)
+    if(i == CARD_FACE)
       s += 10 * this->tab[i];
     else
       s += i * this->tab[i];
 
-    if(i == 1)
+    if(i == CARD_ACE)
       s_ace += this->tab[i];
   }
 

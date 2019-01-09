@@ -1,5 +1,5 @@
-#ifndef BLACKJOKE_H
-#define BLACKJOKE_H
+#ifndef DECK_H
+#define DECK_H
 
 #include <iostream>
 #include <string>
@@ -23,14 +23,14 @@ static std::map<Card, std::string> MapToStringCard =
 {
   { CARD_FACE, "Face" },
   { CARD_ACE, "Ace" },
-  { CARD_VAL2, "Card2" },
-  { CARD_VAL3, "Card3" },
-  { CARD_VAL4, "Card4" },
-  { CARD_VAL5, "Card5" },
-  { CARD_VAL6, "Card6" },
-  { CARD_VAL7, "Card7" },
-  { CARD_VAL8, "Card8" },
-  { CARD_VAL9, "Card9" },
+  { CARD_VAL2, "Val2" },
+  { CARD_VAL3, "Val3" },
+  { CARD_VAL4, "Val4" },
+  { CARD_VAL5, "Val5" },
+  { CARD_VAL6, "Val6" },
+  { CARD_VAL7, "Val7" },
+  { CARD_VAL8, "Val8" },
+  { CARD_VAL9, "Val9" },
 };
 
 struct Deck

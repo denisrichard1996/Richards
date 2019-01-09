@@ -1,5 +1,5 @@
 #include <iostream>
-#include "lib_blackjoke/blackjoke.h"
+#include "lib_blackjoke/deck.h"
 #include "lib_blackjoke/stats.h"
 #include <assert.h>
 #include <memory>
@@ -20,6 +20,6 @@ int main(int argc, char** argv)
   printf("%d\n", h.getResult());
 
   printf("hit %f\n", getStatHit(&d, &h));
-
+  h.print();
   return 0;
 }
