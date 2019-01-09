@@ -10,13 +10,8 @@ int main(int argc, char** argv)
   Board b = Board();
   b.reset(1);
 
-  // b.deck.removeCard(CARD_FACE);
-  // b.deck.removeCard(CARD_FACE);
-  // b.deck.removeCard(CARD_FACE);
-  // b.deck.removeCard(CARD_FACE);
-
-  b.hand.addCard(CARD_VAL6);
-  b.hand.addCard(CARD_VAL6);
+  b.addCardHand(CARD_VAL6);
+  b.addCardHand(CARD_VAL6);
 
   b.print();
   return 0;

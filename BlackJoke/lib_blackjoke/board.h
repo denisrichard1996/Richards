@@ -3,7 +3,6 @@
 
 #include "deck.h"
 
-float getStatHit(Deck* deck, Hand* hand);
 
 struct Board
 {
@@ -12,6 +11,13 @@ public:
   void reset(int iPack);
   void print();
 
+  bool addCardDeck(Card card);
+  bool removeCardDeck(Card card);
+  bool addCardHand(Card card);
+  bool removeCardHand(Card card);
+  float getStatHit();
+
+private:
   Deck deck;
   Hand hand;
 };
